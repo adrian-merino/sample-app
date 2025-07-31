@@ -49,8 +49,25 @@ Summary: Web App is based on the React/FastAPI framework, and is deployed in a K
 
 1.  **For developing a web app**
 
-    1. Run
+    1. Create a Vite React project, using typescript
+       - `npm create vite@latest myapp -- --template react-ts`
+    1. Go to app root directory (i.e., `cd random-app`)
+    1. Install dependencies with `npm install`
+    1. Configure files as necessary. If you want to test, you can do `npm run dev`
+    1. Run `npm run build` to generate distribution files
+    1. Copy generated contents of `random-app/dist/` folder to `fastapi-app/static/`
 
 1.  **For creating the docker image**
     1. Create an account in Docker Hub
     1. Create a repository that will contain the docker image of the web app
+    1. Ensure that the react/fastapi apps are updated
+    1. Install Docker in your local machine
+    1. Create a Docker image, locally, using the `Dockerfile` on the root folder
+       - `docker build -t merinoadrian/random-fastapi:latest .`
+       - You can use this opportunity to check if the app is working as intended.
+       - After building images, you can check with `docker images` if the image has been built correctly.
+    1. Login to your docker hub accout with the CLI. Enter credientials as necessary
+       - `docker login`
+    1. Push the built image
+       - `docker push merinoadrian/random-fastapi:latest`
+    1. Verify in your account if image has been pushed correctly
