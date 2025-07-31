@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-fastapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: random-fastapi
+  template:
+    metadata:
+      labels:
+        app: random-fastapi
+    spec:
+      containers:
+        - name: random-fastapi
+          image: merinoadrian/random-fastapi:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: random-fastapi-np
+spec:
+  selector:
+    app: random-fastapi
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
+  type: NodePort
