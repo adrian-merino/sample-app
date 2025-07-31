@@ -2,9 +2,9 @@
 
 ### Guide for accessing
 
-1.  [Link for Colombia Time](http://48.216.243.48/colombo)
-1.  [Link for Gandalf](http://48.216.243.48/gandalf)
-1.  [Link for Prometheus Server](http://20.157.6.12:9090)
+1.  [Link for Colombia Time](http://48.216.243.48/colombo) (http://48.216.243.48/colombo)
+1.  [Link for Gandalf](http://48.216.243.48/gandalf) (http://48.216.243.48/gandalf)
+1.  [Link for Prometheus Server](http://20.157.6.12:9090) (http://20.157.6.12:9090)
 
 ### Requirements for deploying
 
@@ -13,7 +13,7 @@
 
 ### Deployment Instructions
 
-Summary: Web App is based on the React/FastAPI framework. React was chosen to show the required pages, FastAPI to host the static web app, and create another path for the `metrics` page for Prometheus. The app is packaged into a docker image for deployment. Minikube was used to setup a local K8s cluster. The web app cluster and the Prometheus server are deployed in Azure VM's (separately).
+**Summary**: Web App is based on the React/FastAPI framework. React was chosen to show the required pages, FastAPI to host the static web app, and create another path for the `metrics` page for Prometheus. The app is packaged into a docker image for deployment. Minikube was used to setup a local K8s cluster. The web app cluster and the Prometheus server are deployed in Azure VM's (separately).
 
 1.  **For deploying the web app**
     1. Create an Azure VM with at least 2 vcpu's (e.g., `Standard D2s v3`, Minikube requires at least 2). Download `.pem` key as necessary.
@@ -46,7 +46,7 @@ Summary: Web App is based on the React/FastAPI framework. React was chosen to sh
     1. Prometheus Web UI can be access via http with VM's public IP
        - `http://20.157.6.12:9090`
 
-1.  **For developing a web app**
+1.  **For developing the web app**
 
     1. Create a Vite React project, using typescript
        - `npm create vite@latest myapp -- --template react-ts`
