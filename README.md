@@ -3,6 +3,9 @@
 ### Guide for accessing
 
 1.  Prometheus Server: `http://20.157.6.12:9090`
+1.  Web App: `http://48.216.243.48`
+    - Colombo path: `http://48.216.243.48/colombo`
+    - Gandalf path: `http://48.216.243.48/gandalf`
 
 ### Requirements for deploying
 
@@ -11,9 +14,22 @@
 
 ### Instructions
 
-1.  For the react
+1.  For deploying the web app
+    1. Create an Azure VM with at least 2 vcpu's (e.g., `Standard D2s v3`). Download `.pem` key as necessary.
+       1. Ensure that there is a network security rule to allow port 80 and 22 access
+    1. Access VM via SSH and install the ff:
+       - Docker Engine
+       - Minikube
+       - kubectl
+    1. Start a kubernetes cluster
+       - `sudo minikube start`
+    1. Create a `deployment.yml` file. You can copy the contents of `deployment.yml`
+    1. Deploy the necessary resources, wait for them to finish deployment
+       - `kubectl apply -f deployment.yml`
+    1. Expose the nodeport resource
 2.  For deploying promethues server
-    1. Create an Azure VM (Download .pem key as necessary)
+    1. Create an Azure VM (Download `.pem` key as necessary)
+       1. Ensure that there is a network security rule to allow port 80 and 22 access
     1. Access VM
     1. Execute to download package:
        - `curl -L -o prometheus.tar.gz "https://github.com/prometheus/prometheus/releases/download/v3.5.0/prometheus-3.5.0.linux-amd64.tar.gz"`
