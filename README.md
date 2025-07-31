@@ -56,6 +56,7 @@ Summary: Web App is based on the React/FastAPI framework, and is deployed in a K
     1. Configure files as necessary. If you want to test, you can do `npm run dev`
     1. Run `npm run build` to generate distribution files
     1. Copy generated contents of `random-app/dist/` folder to `fastapi-app/static/`
+    1. Develop an API server to host the static website and create metrics for prometheus (FastAPI in this case)
 
 1.  **For creating the docker image**
     1. Create an account in Docker Hub
