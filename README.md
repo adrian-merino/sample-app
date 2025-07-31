@@ -43,7 +43,7 @@
       - `tar -xzf prometheus.tar.gz`
    1. Go to dir of the extracted package
    1. Configure `prometheus.yml` file. Copy contents of `prometheus/prometheus.yml`
-   1. Execute `./prometheus --configure.file=prometheus.yml`
+   1. Execute `./prometheus --configure.file=prometheus/prometheus.yml`
    1. Check VM network settings, add rule to allow access to `9090` port.
    1. Prometheus Web UI can be access via http with VM's public IP
       - `http://20.157.6.12:9090`
