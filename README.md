@@ -6,7 +6,7 @@
 1.  [Link for Gandalf](http://48.216.243.48/gandalf) (http://48.216.243.48/gandalf)
 1.  [Link for Prometheus Server](http://20.157.6.12:9090) (http://20.157.6.12:9090)
 
-**NB:** VM's for this app are spot instances. Hence, they may get deallocated at any point. If it does, and someone needs to access the pages, send me an email at adrianfcmerino@gmail.com so that I can run them again.
+**NB:** VM's for this app are spot instances. Hence, they may get deallocated at any point. If it does, and someone needs to access the pages, send me an email at adrianfcmerino@gmail.com so that I can run them again, right away.
 
 **Summary**: Web App is based on the React/FastAPI framework. React was chosen to show the required pages, FastAPI to host the static web app, and create another path for the `metrics` page for Prometheus. The app is packaged into a docker image for deployment. Minikube was used to setup a local K8s cluster. The web app cluster and the Prometheus server are deployed in Azure VM's (separately).
 
